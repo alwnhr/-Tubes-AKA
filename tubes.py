@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+import sys
 
 st.title("Compound Interest Calculator")
 
@@ -15,6 +16,8 @@ durasi = st.number_input("Jumlah Periode (hari)", min_value=0)
 
 tabungan_input = st.text_input("Nilai uang (Rp)", value="1.000.000,00")
 tabungan = validasi_input(tabungan_input)
+
+sys.setrecursionlimit(durasi+100)
 
 hitung_recursive = st.button("Calculate Recursive")
 hitung_iterative = st.button("Calculate Iterative")
@@ -42,7 +45,9 @@ if hitung_recursive:
     retur = 1 + suku_bunga / 100 / 260
 
     start = time.time()
-    result_recursive = ExponentBySquaring(retur, durasi) * tabungan
+    base = retur
+    exponent = durasi
+    result_recursive = ExponentBySquaring(base, exponent) * tabungan
     end = time.time()
 
     result = format(result_recursive, ',.0f')
