@@ -40,9 +40,9 @@ def iterative(durasi, tabungan, retur):
         tabungan *= retur
     return tabungan
 
-if hitung_recursive:
+retur = 1 + suku_bunga / 100 / 260
 
-    retur = 1 + suku_bunga / 100 / 260
+if hitung_recursive:
 
     start = time.time()
     base = retur
@@ -56,8 +56,6 @@ if hitung_recursive:
 
 if hitung_iterative:
     
-    retur = 1 + suku_bunga / 100 / 260
-
     start = time.time()
     result_iterative = iterative(durasi, tabungan, retur)
     end = time.time()
