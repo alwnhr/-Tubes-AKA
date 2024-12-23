@@ -23,11 +23,6 @@ hitung_recursive = st.button("Calculate Recursive")
 hitung_iterative = st.button("Calculate Iterative")
 
 def ExponentBySquaring(base, exponent):
-    """
-    Exponentiation by squaring (fast exponentiation).
-    """
-
-    # Base case: any number to the power of 0 is 1
     if exponent == 0:
         return 1
     elif exponent % 2 == 1:
@@ -43,7 +38,6 @@ def iterative(durasi, tabungan, retur):
 retur = 1 + suku_bunga / 100 / 260
 
 if hitung_recursive:
-
     start = time.time()
     base = retur
     exponent = durasi
@@ -55,7 +49,6 @@ if hitung_recursive:
     st.write(f"Time Execute (Recursive): {(end - start) * 1000:.4f} ms")
 
 if hitung_iterative:
-    
     start = time.time()
     result_iterative = iterative(durasi, tabungan, retur)
     end = time.time()
