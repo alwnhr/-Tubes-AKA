@@ -25,10 +25,10 @@ hitung_iterative = st.button("Calculate Iterative")
 def ExponentBySquaring(base, exponent):
     if exponent == 0:
         return 1
-    elif exponent % 2 == 1:
-        return base * ExponentBySquaring(base*base, (exponent-1)/2)
+    elif exponent == 1:
+        return base 
     else:
-        return ExponentBySquaring(base*base,exponent/2)
+        return base * ExponentBySquaring(base,exponent-1)
     
 def iterative(durasi, tabungan, retur):
     for _ in range(durasi):
