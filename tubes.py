@@ -22,13 +22,13 @@ sys.setrecursionlimit(durasi+100)
 hitung_recursive = st.button("Calculate Recursive")
 hitung_iterative = st.button("Calculate Iterative")
 
-def ExponentBySquaring(base, exponent):
+def Power(base, exponent):
     if exponent == 0:
         return 1
     elif exponent == 1:
         return base 
     else:
-        return base * ExponentBySquaring(base,exponent-1)
+        return base * Power(base,exponent-1)
     
 def iterative(durasi, tabungan, retur):
     for _ in range(durasi):
@@ -41,7 +41,7 @@ if hitung_recursive:
     start = time.time()
     base = retur
     exponent = durasi
-    result_recursive = ExponentBySquaring(base, exponent) * tabungan
+    result_recursive = Power(base, exponent) * tabungan
     end = time.time()
 
     result = format(result_recursive, ',.0f')
